@@ -23,3 +23,10 @@ jobs:
           google = "I'm Google play with me"
           print(google);
         shell: python
+  wait-a-job-to-finish:
+    runs-on: ubuntu-latest
+    needs: ["run-shell-command"]
+    steps:
+      - name: log current working directory
+        run: pwd
+        shell: bash
