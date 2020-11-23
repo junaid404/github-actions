@@ -13,3 +13,13 @@ jobs:
           node -v
           npm -v
           npx -v
+  run-on-different-shells:
+    runs-on: ubuntu-latest
+    steps:
+      - name: use bash shell
+        run: echo "Hello World"
+      - name: use python shell
+        run: |
+          google = "I'm Google play with me"
+          print(google);
+        shell: python
