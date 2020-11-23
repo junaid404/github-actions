@@ -30,3 +30,13 @@ jobs:
       - name: log current working directory
         run: pwd
         shell: bash
+  use-different-os:
+    runs-on: windows-latest
+    steps:
+      - name: log contents of working directory using powershell
+        run: ls
+        shell: powershell
+      - name: log contents of working directory using cmd
+        run: |
+          dir
+        shell: cmd
