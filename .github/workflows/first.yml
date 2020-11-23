@@ -1,0 +1,15 @@
+name: "github-actions"
+
+on: [push]
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: print a dummy text
+        run: echo "Hello World"
+      - name: log node and npm version
+        run: |
+          node -v
+          npm -v
+          npx -v
