@@ -1,0 +1,15 @@
+name: prebuild-actions
+
+on: [push]
+
+jobs:
+  hello-name-with-input:
+    runs-on: ubuntu-latest
+    steps:
+      - name: log my name
+        id: time
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: john
+      - name: log the time of hello-name action
+        run: echo "${{steps.time.outputs.time}}"
