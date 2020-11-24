@@ -1,6 +1,6 @@
 name: checkout-action
 
-on: [push]
+on: [pull_request]
 
 jobs:
   clone-repo-and-log-contents:
@@ -9,4 +9,4 @@ jobs:
       - name: clone the repo and checkout to master
         uses: "actions/checkout@v2"
       - name: log the contents
-        run: ls
+        run: ls -a
