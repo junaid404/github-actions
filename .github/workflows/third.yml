@@ -1,0 +1,12 @@
+name: checkout-action
+
+on: [push]
+
+jobs:
+  clone-repo-and-log-contents:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone the repo and checkout to master
+        uses: "actions/checkout@v2"
+      - name: log the contents
+        run: ls

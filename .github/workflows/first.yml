@@ -1,42 +1,42 @@
-name: "github-actions"
+# name: "github-actions"
 
-on: [push]
+# on: [push]
 
-jobs:
-  run-shell-command:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: print a dummy text
-        run: echo "Hello World"
-      - name: log node and npm version
-        run: |
-          node -v
-          npm -v
-          npx -v
-  run-on-different-shells:
-    runs-on: ubuntu-latest
-    steps:
-      - name: use bash shell
-        run: echo "Hello World"
-      - name: use python shell
-        run: |
-          google = "I'm Google play with me"
-          print(google);
-        shell: python
-  wait-a-job-to-finish:
-    runs-on: ubuntu-latest
-    needs: ["run-shell-command"]
-    steps:
-      - name: log current working directory
-        run: pwd
-        shell: bash
-  use-different-os:
-    runs-on: windows-latest
-    steps:
-      - name: log contents of working directory using powershell
-        run: ls
-        shell: powershell
-      - name: log contents of working directory using cmd
-        run: |
-          dir
-        shell: cmd
+# jobs:
+#   run-shell-command:
+#     runs-on: ubuntu-20.04
+#     steps:
+#       - name: print a dummy text
+#         run: echo "Hello World"
+#       - name: log node and npm version
+#         run: |
+#           node -v
+#           npm -v
+#           npx -v
+#   run-on-different-shells:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: use bash shell
+#         run: echo "Hello World"
+#       - name: use python shell
+#         run: |
+#           google = "I'm Google play with me"
+#           print(google);
+#         shell: python
+#   wait-a-job-to-finish:
+#     runs-on: ubuntu-latest
+#     needs: ["run-shell-command"]
+#     steps:
+#       - name: log current working directory
+#         run: pwd
+#         shell: bash
+#   use-different-os:
+#     runs-on: windows-latest
+#     steps:
+#       - name: log contents of working directory using powershell
+#         run: ls
+#         shell: powershell
+#       - name: log contents of working directory using cmd
+#         run: |
+#           dir
+#         shell: cmd
